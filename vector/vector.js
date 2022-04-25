@@ -16,6 +16,7 @@ function entregarDinero()
   var pz;
   var mu;
   var mv;
+  var cruz;
 
   cx=uy.value*vz.value-uz.value*vy.value;
   cy=-ux.value*vz.value+uz.value*vx.value;
@@ -29,6 +30,26 @@ function entregarDinero()
   mu=(ux.value**2+uy.value**2+uz.value**2)**0.5;
   mv=(vx.value**2+vy.value**2+vz.value**2)**0.5;
 
+  
+  cruz=cx**2+cy**2+cz**2;
+
+  if (punto==0){
+    orto.innerHTML ="Los vectores son ortogonales (perpendiculares): ";
+  }
+  else
+  {
+    orto.innerHTML ="Los vectores NO son ortogonales (perpendiculares): ";
+  }
+
+  if (cruz==0){
+    para.innerHTML ="Los vectores son paralelos: ";
+  }
+  else
+  {
+    para.innerHTML ="Los vectores NO son paralelos: ";
+  }
+
+  
   resultado.innerHTML ="Producto Punto u*v: "+ punto;
   ccx.innerHTML ="Wx: "+ cx;
   ccy.innerHTML ="Wy: "+ cy;
@@ -55,6 +76,9 @@ var ppz = document.getElementById("ppz");
 
 var mmu = document.getElementById("mmu");
 var mmv = document.getElementById("mmv");
+
+var orto = document.getElementById("orto");
+var para = document.getElementById("para");
 
 var b = document.getElementById("extraer");
 b.addEventListener("click", entregarDinero);
