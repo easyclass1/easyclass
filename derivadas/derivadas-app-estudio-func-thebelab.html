@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>easyclass</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="otro-thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="status_button.css" type="text/css" />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>  
+  <!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>-->
+  <link rel="stylesheet" type="text/css" href="https://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
+  <script type="text/javascript" src="https://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script>
+  <!--<link rel="stylesheet" type="text/css" href="css/jsxgraph.css" />
+  <script type="text/javascript" src="js/jsxgraphcore.js"></script>-->
+	<script>
+		MathJax.Hub.Config({
+		 tex2jax:
+		 {
+		    preview: "none"
+		 }
+		});
+	</script>
+
+  <!-- Thebe configuration !-->
+  <script type="text/x-thebe-config">
+    {
+      bootstrap: true,
+      binderOptions: {
+          repo: "sagemath/sage-binder-env",
+      },
+      stripPrompts: {
+        inPrompt: 'sage: ',
+        continuationPrompt: '....: ',
+        selector: '.sage-input',
+      },
+		  kernelOptions: {
+		    name: "sagemath",
+		  }
+  }
+  </script>
+
+  <!-- Load the Thebe library !-->
+  <script type="text/javascript" src="https://unpkg.com/thebelab@^0.1.0" ></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+  <!--<script type="text/javascript" src="status_button.js"></script>-->
+  <script type="text/javascript">
+    window.onload = function() {
+        thebelab.on("status", function(evt, data) {
+            console.log("Status changed:", data.status, data.message);
+            $(".thebe-status-button")
+            .attr("class", "thebe-status-button thebe-status-" + data.status)
+            .text(data.status);
+        });
+        $(".thebe-status-button")
+            .attr("class", "thebe-status-button thebe-status-" + "not-connected")
+            .text("Sin conexión");
+    };
+  </script>  
+  <!-- or to use a local build: -->
+  <!-- <script type="text/javascript" src="../lib/index.js"></script> !-->
+
+</head>
+<body>
+
+  <p>
+    <img src="cajero.gif" />
+  </p>
+  <li>
+    <a href="http://bit.ly/easyclassig">Instagram: easyclass.1</a>
+  </li>
+  <p></p>
+<section>
+<span>Estado del núcleo: <span class="thebe-status-button"></span></span>
+
+<h2 id="crecimiento-y-decrecimiento">Primera derivada: Crecimiento y decrecimiento</h2>
+  <pre class="sage-input" data-language="python">
+    sage: f= 2*x^3-3*x^2-12*x+1
+    sage: df = diff(f,x)
+		sage: df
+    
+		sage: solve(df,x)
+  </pre>
+
+
+  <pre class="sage-input" data-language="python">
+		sage: solve(df>0,x)
+  </pre>
+
+
+  <h2 id="extremos-relativos">Extremos relativos</h2>
+  
+
+  <pre class="sage-input" data-language="python">
+		sage: ddf=diff(df,x)
+		sage: ddf
+
+		sage: [ddf.subs({x:-1}), ddf.subs({x:2})]
+  </pre>
+
+  <h2 id="concavidad-y-convexidad">Segunda derivada: Concavidad y convexidad</h2>
+ 
+
+  <pre class="sage-input" data-language="python">
+		sage: solve(ddf>0,x)
+  </pre>
+
+
+  <h2 id="puntos-de-inflexión">Puntos de inflexión</h2>
+ 
+  <pre class="sage-input" data-language="python">
+		sage: solve(ddf,x)
+
+		sage: diff(ddf,x)
+  </pre>
+
+
+  <pre class="sage-input" data-language="python">
+		sage: plot(f, (-5,5), ymax=20, ymin=-20)	
+  </pre>
+</section>
+
+
+<script type="text/javascript" language="javascript">
+  function show(str, obj){
+    document.getElementById(obj).innerHTML = str;
+    MathJax.Hub.Typeset();
+    //MathJax.Hub.Queue(["Typeset",MathJax.Hub,obj]);
+  }
+  function show2(divID) {
+
+      var sol = document.getElementById("sol-"+divID);
+      var div = document.getElementById(divID);
+
+      if(sol.style.display == "none"){
+        sol.style.display = "block";
+      }else{
+        sol.style.display = "none";
+      }
+
+
+      if(div.innerHTML == "Solución"){
+        div.innerHTML = "Oculta solución";
+      }else{
+        div.innerHTML = "Solución";
+      }
+
+  }
+</script>
+
+
+</body>
+</html>
