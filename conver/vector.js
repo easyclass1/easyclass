@@ -1,60 +1,58 @@
-function m1()
-{
-  var x1= document.getElementById("x1");
-var x2= document.getElementById("x2");
-var moleculas;
-var masa;
-var atomos;
-masa=x1.value*x2.value;
-moleculas=6.022*10**23*x1.value;
-atomos=6.022*10**23*x1.value;
-resultado1.innerHTML ="La masa es: "+ masa+" gr";
-resultado2.innerHTML ="Numero de atomos: "+ atomos;
-resultado3.innerHTML ="Numero de moleculas: "+ moleculas;
-}
-var resultado1 = document.getElementById("resultado1");
-var resultado2 = document.getElementById("resultado2");
-var resultado3 = document.getElementById("resultado3");
-var b = document.getElementById("extraer1");
-b.addEventListener("click", m1);
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>easyclass</title>
+  <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+  <body>
+    <p>
+      <img src="cajero.gif" />
+    </p>
+    <li>
+      <a href="http://bit.ly/easyclassig">Instagram: easyclass.1</a>
+    </li>
+    <p>
+      <img src="Captura1.JPG" />
+    </p>
+    <h2>Calcular con "moles" de sustancia:&nbsp<input type="number" id="x1"/></h2>
+  <span>Introducir "masa molar en gr/mol" de la sustancia:&nbsp</span><input type="number" id="x2"/>
+  <p><input type="button" value="Calcular" id="extraer1" /></p>
+    
+    <h2 id="resultado1"></h2>
+    <h2 id="resultado2"></h2>
+    <h2 id="resultado3"></h2>
 
-function m2()
-{
-  var x3= document.getElementById("x3");
-var x4= document.getElementById("x4");
-var mol2
-var moleculas2;
-var atomos2;
-mol2=x3.value/x4.value;
-moleculas2=6.022*10**23*mol2;
-atomos2=6.022*10**23*mol2;
-resultado4.innerHTML ="Numero de Moles es: "+ mol2+" gr/mol";
-resultado5.innerHTML ="Numero de atomos: "+ atomos2;
-resultado6.innerHTML ="Numero de moleculas: "+ moleculas2;
-}
-var resultado4 = document.getElementById("resultado4");
-var resultado5 = document.getElementById("resultado5");
-var resultado6 = document.getElementById("resultado6");
-var b = document.getElementById("extraer2");
-b.addEventListener("click", m2);
+    <p>&nbsp</p>
+    
+    <h2>Calcular con "masa en gr" de sustancia:&nbsp<input type="number" id="x3"/></h2>
+  <span>Introducir "masa molar en gr/mol" de la sustancia:&nbsp</span><input type="number" id="x4"/>
+  <p><input type="button" value="Calcular" id="extraer2" /></p>
+    
+    <h2 id="resultado4"></h2>
+    <h2 id="resultado5"></h2>
+    <h2 id="resultado6"></h2>
 
+    <p>&nbsp</p>
 
-function m3()
-{
-  var x5= document.getElementById("x5");
-var x6= document.getElementById("x6");
-var mol3
-var moleculas3;
-var masa3;
-mol3=x5.value/(6.022*10**23);
-moleculas3=x5.value;
-masa3=mol3*x6.value;
-resultado7.innerHTML ="La masa es: "+ masa3+" gr/mol";
-resultado8.innerHTML ="Numero de moles: "+ mol3;
-resultado9.innerHTML ="Numero de moleculas: "+ moleculas3;
-}
-var resultado7 = document.getElementById("resultado7");
-var resultado8 = document.getElementById("resultado8");
-var resultado9 = document.getElementById("resultado9");
-var b = document.getElementById("extraer3");
-b.addEventListener("click", m3);
+    <h2>Calcular con "numero de atomos" de sustancia:&nbsp<input type="number" id="x5"/></h2>
+    <span>Introducir "masa molar en gr/mol" de la sustancia:&nbsp</span><input type="number" id="x6"/>
+    <p><input type="button" value="Calcular" id="extraer3" /></p>
+      
+      <h2 id="resultado7"></h2>
+      <h2 id="resultado8"></h2>
+      <h2 id="resultado9"></h2>
+
+      <p>&nbsp</p>
+
+      <h2>Calcular con "numero de moleculas" de sustancia:&nbsp<input type="number" id="x7"/></h2>
+      <span>Introducir "masa molar en gr/mol" de la sustancia:&nbsp</span><input type="number" id="x8"/>
+      <p><input type="button" value="Calcular" id="extraer4" /></p>
+        
+        <h2 id="resultado10"></h2>
+        <h2 id="resultado11"></h2>
+        <h2 id="resultado12"></h2>
+  
+
+    <script src="vector.js">
+    </script>
+ </body>
+</html>
